@@ -5,7 +5,7 @@ import { GrGithub } from "react-icons/gr";
 import { ModeToggle } from "@/components/toggle-dark-mode";
 import { useRouter } from "next/navigation";
 import { MenuComponents } from "./menu-components";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import BarraLateralMobile from "./menu-barra-mobile";
 
 export default function NavStart() {
@@ -17,6 +17,9 @@ export default function NavStart() {
     setMenuMobile(!menuMobile);
   };
 
+  const handleGithub = () => {
+    router.push("https://github.com/emerson204/Uiwork");
+  };
   return (
     <header className="max-w-[85rem] mx-auto py-4 flex justify-between items-center px-3">
       <div className="flex md:gap-14 gap-5 items-center">
@@ -49,14 +52,18 @@ export default function NavStart() {
           ""
         ) : (
           <Menu
-            sixe={20}
+            size={20}
             className="cursor-pointer md:hidden"
             strokeWidth={1}
             onClick={handleMenu}
           />
         )}
 
-        <GrGithub size={20} className="cursor-pointer" />
+        <GrGithub
+          size={20}
+          className="cursor-pointer"
+          onClick={() => router.push("https://github.com/emerson204/Uiwork")}
+        />
         <ModeToggle />
       </div>
     </header>

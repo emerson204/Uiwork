@@ -15,8 +15,8 @@ export default function Navbar() {
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{
-        duration: 0.3,
-        delay: 0.2,
+        duration: 0.7,
+        delay: 0.3,
         ease: [0, 0.71, 0.2, 1.01],
       }}
     >
@@ -31,7 +31,11 @@ export default function Navbar() {
       </h1>
 
       <div className="flex gap-4 items-center">
-        <GrGithub size={20} className="cursor-pointer" />
+        <GrGithub
+          size={20}
+          className="cursor-pointer"
+          onClick={() => router.push("https://github.com/emerson204/Uiwork")}
+        />
 
         <ModeToggle />
 
